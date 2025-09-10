@@ -8,7 +8,8 @@ const router = express.Router();
 // POST /api/admin/users
 // ==========================
 router.post("/", async (req, res) => {
-    const { name, email, password, role, permissions } = req.body;
+    // Include phone in the deconstructed request body
+    const { name, email, password, role, permissions, phone } = req.body;
 
     if (!email || !password) {
         return res.status(400).json({ message: "Missing required fields" });
@@ -24,10 +25,10 @@ router.post("/", async (req, res) => {
         // Hash password
         const passwordHash = await bcrypt.hash(password, 10);
 
-        // Insert new admin
+        // Insert new admin, including the phone number
         await pool.query(
-            "INSERT INTO admins (name, email, password_hash, role, permissions) VALUES (?, ?, ?, ?, ?)",
-            [name || null, email, passwordHash, role || "admin", JSON.stringify(permissions) || "[]"]
+            "INSERT INTO admins (name, email, password_hash, role, permissions, phone) VALUES (?, ?, ?, ?, ?, ?)",
+            [name || null, email, passwordHash, role || "admin", JSON.stringify(permissions) || "[]", phone || null]
         );
 
         res.json({ message: "Admin added successfully ✅" });
@@ -43,8 +44,9 @@ router.post("/", async (req, res) => {
 // ==========================
 router.get("/", async (req, res) => {
     try {
+        // Select the phone column
         const [rows] = await pool.query(
-            "SELECT id, name, email, role, permissions, created_at FROM admins"
+            "SELECT id, name, email, role, permissions, created_at, phone FROM admins"
         );
         res.json(rows);
     } catch (err) {
@@ -60,8 +62,9 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     const id = req.params.id;
     try {
+        // Select the phone column
         const [rows] = await pool.query(
-            "SELECT id, name, email, role, permissions, created_at FROM admins WHERE id = ?",
+            "SELECT id, name, email, role, permissions, created_at, phone FROM admins WHERE id = ?",
             [id]
         );
         if (rows.length === 0) return res.status(404).json({ message: "Admin not found ❌" });
@@ -78,12 +81,14 @@ router.get("/:id", async (req, res) => {
 // ==========================
 router.put("/:id", async (req, res) => {
     const id = req.params.id;
-    const { name, email, role, permissions } = req.body;
+    // Include phone in the deconstructed request body
+    const { name, email, role, permissions, phone } = req.body;
 
     try {
+        // Update the phone column
         await pool.query(
-            "UPDATE admins SET name = ?, email = ?, role = ?, permissions = ? WHERE id = ?",
-            [name || null, email, role || "admin", JSON.stringify(permissions) || "[]", id]
+            "UPDATE admins SET name = ?, email = ?, role = ?, permissions = ?, phone = ? WHERE id = ?",
+            [name || null, email, role || "admin", JSON.stringify(permissions) || "[]", phone || null, id]
         );
         res.json({ message: "Admin updated successfully ✅" });
     } catch (err) {

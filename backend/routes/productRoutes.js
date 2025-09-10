@@ -47,7 +47,8 @@ router.get("/", async (_req, res) => {
             thumbImage: p.main_image ? [p.main_image] : [],
             images: p.gallery ? JSON.parse(p.gallery) : [],
             description: p.description,
-            slug: p.slug
+            slug: p.slug,
+            action: p.action
         }));
 
         res.json(products);
@@ -64,7 +65,7 @@ router.post("/", upload.fields([{ name: "mainImage", maxCount: 1 }, { name: "gal
     try {
         const {
             name, category, price, description, type, is_new, on_sale,
-            rate, origin_price, brand, sold, quantity, quantity_purchase, slug
+            rate, origin_price, brand, sold, quantity, quantity_purchase, slug, action
         } = req.body;
 
         let sizes = [];
@@ -80,8 +81,8 @@ router.post("/", upload.fields([{ name: "mainImage", maxCount: 1 }, { name: "gal
 
         await pool.query(
             `INSERT INTO products
-            (name, category, type, brand, price, origin_price, description, quantity, sold, quantity_purchase, is_new, on_sale, rate, slug, main_image, thumb_image, gallery, sizes, variations, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
+            (name, category, type, brand, price, origin_price, description, quantity, sold, quantity_purchase, is_new, on_sale, rate, slug, main_image, thumb_image, gallery, sizes, variations, created_at, action)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)`,
             [
                 name || null,
                 category || null,
@@ -101,7 +102,8 @@ router.post("/", upload.fields([{ name: "mainImage", maxCount: 1 }, { name: "gal
                 main_image,
                 JSON.stringify(galleryFiles),
                 JSON.stringify(sizes),
-                JSON.stringify(variations)
+                JSON.stringify(variations),
+                action || null // Add the action field here
             ]
         );
 

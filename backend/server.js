@@ -35,8 +35,8 @@ const adminUserRoutes = require("./routes/adminUserRoutes");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const attributeRoutes = require("./routes/attributeRoutes");
-const ordersRoutes = require("./routes/orders");
-const memberRoutes = require("./routes/routes");  // 👈 your member login/signup
+const ordersRoutes = require("./routes/orders"); 
+const memberRoutes = require("./routes/routes"); 
 
 // Public APIs
 app.use("/api/auth", authRoutes);
@@ -49,7 +49,9 @@ app.use("/api/admin/products", adminAuth, productRoutes);
 app.use("/api/admin/categories", adminAuth, categoryRoutes);
 app.use("/api/admin/attributes", adminAuth, attributeRoutes);
 
-// Orders
+// =========================
+// 🔹 Orders API
+// =========================
 app.use("/api/orders", ordersRoutes);
 
 // =========================
