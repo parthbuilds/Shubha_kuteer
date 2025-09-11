@@ -72,11 +72,11 @@ app.use((req, res) => {
     });
 });
 
-// =========================
-// 🔹 Start Server
-// =========================
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 User site running at: http://localhost:${PORT}`);
-    console.log(`🛠️ Admin site running at: http://localhost:${PORT}/admin`);
-});
+// // =========================
+// // 🔹 Start Server
+// // =========================
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`🚀 User site running at: http://localhost:${PORT}`);
+//     console.log(`🛠️ Admin site running at: http://localhost:${PORT}/admin`);
+// });
