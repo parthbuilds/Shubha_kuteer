@@ -151,77 +151,81 @@
         }
 
         /* Add this rule to your <style> tag */
-.product-orbit-container {
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    :root {
-        --orbit-radius: 250px;
-    }
-    
-    .preloader-content-center {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .product-orbit-container {
-        display: block; 
-        position: absolute;
-        top: 75%;
-        left: 65%;
-        transform: translate(-50%, -50%);
-        width: calc(2 * var(--orbit-radius));
-        height: calc(2 * var(--orbit-radius));
-    }
-
-    @media (min-width: 1280px) {
         .product-orbit-container {
-            top: 65%;
-            left: 60%;
-            width: calc(1.5 * var(--orbit-radius));
-            height: calc(1.5 * var(--orbit-radius));
+            display: none;
         }
-    }
 
-    .product-orbit-container .product-item-rotation {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        animation: circle-orbit 4s linear infinite;
-    }
+        @media (min-width: 1024px) {
+            :root {
+                --orbit-radius: 250px;
+            }
 
-    .product-orbit-container .product-item-rotation:nth-child(1) {
-        transform: rotate(0deg) translate(var(--orbit-radius)) rotate(0deg);
-        animation-delay: 0s;
-    }
-    .product-orbit-container .product-item-rotation:nth-child(2) {
-        transform: rotate(90deg) translate(var(--orbit-radius)) rotate(-90deg);
-        animation-delay: -1s;
-    }
-    .product-orbit-container .product-item-rotation:nth-child(3) {
-        transform: rotate(180deg) translate(var(--orbit-radius)) rotate(-180deg);
-        animation-delay: -2s;
-    }
-    .product-orbit-container .product-item-rotation:nth-child(4) {
-        transform: rotate(270deg) translate(var(--orbit-radius)) rotate(-270deg);
-        animation-delay: -3s;
-    }
+            .preloader-content-center {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
 
-    @keyframes circle-orbit {
-        0% {
-            transform: rotate(0deg) translate(var(--orbit-radius)) rotate(0deg);
+            .product-orbit-container {
+                display: block;
+                position: absolute;
+                top: 75%;
+                left: 65%;
+                transform: translate(-50%, -50%);
+                width: calc(2 * var(--orbit-radius));
+                height: calc(2 * var(--orbit-radius));
+            }
+
+            @media (min-width: 1280px) {
+                .product-orbit-container {
+                    top: 65%;
+                    left: 60%;
+                    width: calc(1.5 * var(--orbit-radius));
+                    height: calc(1.5 * var(--orbit-radius));
+                }
+            }
+
+            .product-orbit-container .product-item-rotation {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                animation: circle-orbit 4s linear infinite;
+            }
+
+            .product-orbit-container .product-item-rotation:nth-child(1) {
+                transform: rotate(0deg) translate(var(--orbit-radius)) rotate(0deg);
+                animation-delay: 0s;
+            }
+
+            .product-orbit-container .product-item-rotation:nth-child(2) {
+                transform: rotate(90deg) translate(var(--orbit-radius)) rotate(-90deg);
+                animation-delay: -1s;
+            }
+
+            .product-orbit-container .product-item-rotation:nth-child(3) {
+                transform: rotate(180deg) translate(var(--orbit-radius)) rotate(-180deg);
+                animation-delay: -2s;
+            }
+
+            .product-orbit-container .product-item-rotation:nth-child(4) {
+                transform: rotate(270deg) translate(var(--orbit-radius)) rotate(-270deg);
+                animation-delay: -3s;
+            }
+
+            @keyframes circle-orbit {
+                0% {
+                    transform: rotate(0deg) translate(var(--orbit-radius)) rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg) translate(var(--orbit-radius)) rotate(-360deg);
+                }
+            }
         }
-        100% {
-            transform: rotate(360deg) translate(var(--orbit-radius)) rotate(-360deg);
-        }
-    }
-}
     </style>
 </head>
 
@@ -259,10 +263,10 @@
                     </div>
                     <div class="choose-type choose-currency flex items-center gap-1.5">
                         <div class="select relative">
-                            <p class="selected caption2">USD</p>
+                            <p class="selected caption2">INR</p>
                             <ul class="list-option bg-white">
-                                <li data-item="USD" class="caption2 active">USD</li>
-                                <li data-item="EUR" class="caption2">EUR</li>
+                                <li data-item="INR" class="caption2 active">INR</li>
+                                <li data-item="USD" class="caption2">USD</li>
                                 <li data-item="GBP" class="caption2">GBP</li>
                             </ul>
                         </div>
@@ -289,26 +293,26 @@
     </div>
     <!-- Preloader -->
     <div class="preloader">
-    <a href="index.html" class="pb-10">
-        <img src="./assets/images/logo.svg" alt="Shubha Kuteer Logo"
-            class="w-120 h-20 md:w-24 md:h-24 object-cover" />
-    </a>
-    <div class="progress-container">
-        <div class="progress-bar"></div>
-    </div>
-    <div class="text-container">
-        <div class="loading-text initial">Loading</div>
-        <div class="loading-text complete">Happy Homes</div>
-    </div>
-    <div class="percentage">0</div>
+        <a href="index.html" class="pb-10">
+            <img src="./assets/images/logo.svg" alt="Shubha Kuteer Logo"
+                class="w-120 h-20 md:w-24 md:h-24 object-cover" />
+        </a>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="text-container">
+            <div class="loading-text initial">Loading</div>
+            <div class="loading-text complete">Happy Homes</div>
+        </div>
+        <div class="percentage">0</div>
 
-    <div class="product-orbit-container">
-        <img src="./assets/images/product/bag-1.png" alt="Product Image 1" class="product-item-rotation" />
-        <img src="./assets/images/product/bag-2.png" alt="Product Image 2" class="product-item-rotation" />
-        <img src="./assets/images/product/bag-3.png" alt="Product Image 3" class="product-item-rotation" />
-        <img src="./assets/images/product/bag-4.png" alt="Product Image 4" class="product-item-rotation" />
+        <div class="product-orbit-container">
+            <img src="./assets/images/product/bag-1.png" alt="Product Image 1" class="product-item-rotation" />
+            <img src="./assets/images/product/bag-2.png" alt="Product Image 2" class="product-item-rotation" />
+            <img src="./assets/images/product/bag-3.png" alt="Product Image 3" class="product-item-rotation" />
+            <img src="./assets/images/product/bag-4.png" alt="Product Image 4" class="product-item-rotation" />
+        </div>
     </div>
-</div>
 
     <!-- Top Main Header -->
     <div class="header-menu style-one relative bg-primary w-full h-[120px] md:h-[100px] ">
@@ -328,22 +332,30 @@
                 </a>
                 <div class="right flex gap-12 z-[50]">
                     <div class="list-action flex items-center gap-4">
-                        <div class="user-icon flex items-center justify-center cursor-pointer" id="userIcon">
-                            <i class="ph-bold ph-user text-2xl" id="userIconInner"></i>
+                        <div class="user-icon flex items-center justify-center cursor-pointer">
+                            <i class="ph-bold ph-user text-2xl"></i>
+                            <div class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm"
+                                id="userPopup">
 
-                            <div
-                                class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm">
+                                <!-- Login button -->
                                 <a href="login.html" id="loginBtn" class="button-main w-full text-center">Login</a>
-                                <div class="text-secondary text-center mt-3 pb-4">
+
+                                <!-- Logout button (hidden by default) -->
+                                <button id="logoutBtn"
+                                    class="button-main w-full text-center hidden bg-red-600 hover:bg-red-700">
+                                    Logout
+                                </button>
+
+                                <div class="text-secondary text-center mt-3 pb-4" id="registerBlock">
                                     Don’t have an account?
                                     <a href="register.html" class="text-black pl-1 hover:underline">Register</a>
                                 </div>
-                                <a href="#!" id="logoutBtn" class="button-main w-full text-center hidden">Logout</a>
 
                                 <div class="bottom mt-4 pt-4 border-t border-line"></div>
                                 <a href="#!" class="body1 hover:underline">Support</a>
                             </div>
                         </div>
+
 
                         <div class="max-md:hidden wishlist-icon flex items-center relative cursor-pointer">
                             <i class="ph-bold ph-heart text-2xl"></i>
@@ -635,11 +647,11 @@
 
                                                                 <div
                                                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                    <div class="product-price text-title">$40.00
+                                                                    <div class="product-price text-title">₹40.00
                                                                     </div>
                                                                     <div
                                                                         class="product-origin-price caption1 text-secondary2">
-                                                                        <del>$50.00</del>
+                                                                        <del>₹50.00</del>
                                                                     </div>
                                                                     <div
                                                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -743,11 +755,11 @@
 
                                                                 <div
                                                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                    <div class="product-price text-title">$40.00
+                                                                    <div class="product-price text-title">₹40.00
                                                                     </div>
                                                                     <div
                                                                         class="product-origin-price caption1 text-secondary2">
-                                                                        <del>$50.00</del>
+                                                                        <del>₹50.00</del>
                                                                     </div>
                                                                     <div
                                                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -823,7 +835,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="new-collection.html" class="text-xl font-semibold flex items-center justify-between mt-5">New
+                                <a href="new-collection.html"
+                                    class="text-xl font-semibold flex items-center justify-between mt-5">New
                                     Collections
                                     <span class="text-right">
                                         <i class="ph ph-caret-right text-xl"></i>
@@ -1432,7 +1445,8 @@
                             <div class="flex flex-col">
                                 <span class="">shubhakuteer@gmail.com</span>
                                 <span class="mt-[14px]">+91 8764170000</span>
-                                <span class="mt-3 pt-1">Shanti Residency, A9/10, Ayodhya Nagar, Gandhi Path West, Vaishali Nagar, Jaipur - 302021</span>
+                                <span class="mt-3 pt-1">Shanti Residency, A9/10, Ayodhya Nagar, Gandhi Path West,
+                                    Vaishali Nagar, Jaipur - 302021</span>
                             </div>
                         </div>
                     </div>
@@ -1455,7 +1469,8 @@
                             <div class="item flex flex-col basis-1/3">
                                 <div class="text-button-uppercase pb-3">Quick Shop</div>
                                 <a class="caption1 has-line-before duration-300 w-fit" href="shop.html">Kaftans</a>
-                                <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">Travel Kits</a>
+                                <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">Travel
+                                    Kits</a>
                                 <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">Hand Bags
                                 </a>
                                 <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">
@@ -1509,8 +1524,8 @@
                             </div>
                             <div class="choose-currency flex items-center gap-1.5">
                                 <select name="currency" id="chooseCurrencyFooter" class="caption2 bg-transparent">
+                                    <option value="INR">INR</option>
                                     <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
                                     <option value="GBP">GBP</option>
                                 </select>
                                 <i class="ph ph-caret-down text-xs text-[#1F1F1F]"></i>
@@ -1577,11 +1592,11 @@
                                             class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                     </div>
                                     <div class="">
-                                        <div class="name text-button">Faux-leather trousers</div>
+                                        <div class="name text-button">Table runner 3</div>
                                         <div class="flex items-center gap-2 mt-2">
-                                            <div class="product-price text-title">$15.00</div>
+                                            <div class="product-price text-title">₹15.00</div>
                                             <div class="product-origin-price text-title text-secondary2">
-                                                <del>$25.00</del>
+                                                <del>₹25.00</del>
                                             </div>
                                         </div>
                                     </div>
@@ -1598,11 +1613,11 @@
                                             class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                     </div>
                                     <div class="">
-                                        <div class="name text-button">Faux-leather trousers</div>
+                                        <div class="name text-button">Kaftan 1</div>
                                         <div class="flex items-center gap-2 mt-2">
-                                            <div class="product-price text-title">$15.00</div>
+                                            <div class="product-price text-title">₹15.00</div>
                                             <div class="product-origin-price text-title text-secondary2">
-                                                <del>$25.00</del>
+                                                <del>₹25.00</del>
                                             </div>
                                         </div>
                                     </div>
@@ -1619,11 +1634,11 @@
                                             class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                     </div>
                                     <div class="">
-                                        <div class="name text-button">Faux-leather trousers</div>
+                                        <div class="name text-button">Pillow 1</div>
                                         <div class="flex items-center gap-2 mt-2">
-                                            <div class="product-price text-title">$15.00</div>
+                                            <div class="product-price text-title">₹15.00</div>
                                             <div class="product-origin-price text-title text-secondary2">
-                                                <del>$25.00</del>
+                                                <del>₹25.00</del>
                                             </div>
                                         </div>
                                     </div>
@@ -1639,11 +1654,11 @@
                                             class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                     </div>
                                     <div class="">
-                                        <div class="name text-button">Faux-leather trousers</div>
+                                        <div class="name text-button">Kaftan 2</div>
                                         <div class="flex items-center gap-2 mt-2">
-                                            <div class="product-price text-title">$15.00</div>
+                                            <div class="product-price text-title">₹15.00</div>
                                             <div class="product-origin-price text-title text-secondary2">
-                                                <del>$25.00</del>
+                                                <del>₹25.00</del>
                                             </div>
                                         </div>
                                     </div>
@@ -1736,7 +1751,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                <div class="product-name text-title duration-300">Kaftan 2</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1758,9 +1773,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1770,7 +1785,7 @@
                         </div>
                     </div>
 
-                    <div class="product-item grid-type" data-item="13">
+                    <div class="product-item grid-type" data-item="4">
                         <div class="product-main cursor-pointer block">
                             <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                 <div
@@ -1823,7 +1838,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                <div class="product-name text-title duration-300">Kaftan 2</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1845,9 +1860,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1857,7 +1872,7 @@
                         </div>
                     </div>
 
-                    <div class="product-item grid-type" data-item="12">
+                    <div class="product-item grid-type" data-item="7">
                         <div class="product-main cursor-pointer block">
                             <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                 <div
@@ -1910,7 +1925,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                <div class="product-name text-title duration-300">Bedsheet 1</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -1932,9 +1947,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1997,7 +2012,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                <div class="product-name text-title duration-300">Bedsheet 1</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -2019,9 +2034,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -2067,11 +2082,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Table runner 3</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -2088,11 +2103,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Kaftan 1</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -2109,11 +2124,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Pillow 1</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -2129,11 +2144,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Kaftan 2</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -2663,33 +2678,8 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const loginBtn = document.getElementById("loginBtn");
-            const logoutBtn = document.getElementById("logoutBtn");
-
-            // Check if user is logged in
-            const user = localStorage.getItem("user"); // Adjust key if you store user differently
-
-            if (user) {
-                // User is logged in
-                loginBtn.classList.add("hidden"); // Hide login button
-                logoutBtn.classList.remove("hidden"); // Show logout button
-            } else {
-                // User is not logged in
-                loginBtn.classList.remove("hidden");
-                logoutBtn.classList.add("hidden");
-            }
-
-            // Logout functionality
-            logoutBtn.addEventListener("click", () => {
-                localStorage.removeItem("user"); // Remove user data
-                localStorage.removeItem("token"); // Remove token if used
-                window.location.reload(); // Refresh to update popup
-            });
-        });
-    </script>
-
+    
+    <script src="./assets/js/login.js"></script>
     <script src="./assets/js/phosphor-icons.js"></script>
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>

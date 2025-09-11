@@ -617,11 +617,11 @@ function renderProducts(page, products = []) {
                 )}
                             <div
                             class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                            <div class="product-price text-title">$${product.price}.00</div>
+                            <div class="product-price text-title">₹${product.price}.00</div>
                             ${Math.floor(100 - ((product.price / product.originPrice) * 100)) > 0 ? (
                     `
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$${product.originPrice}.00</del>
+                                        <del>₹${product.originPrice}.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -668,11 +668,11 @@ function renderProducts(page, products = []) {
                                 <div class="product-infor max-sm:w-full">
                                     <div class="product-name heading6 inline-block duration-300">${product.name}</div>
                                     <div class="product-price-block flex items-center gap-2 flex-wrap mt-2 duration-300 relative z-[1]">
-                                        <div class="product-price text-title">$${product.price}.00</div>
+                                        <div class="product-price text-title">₹${product.price}.00</div>
                                         ${Math.floor(100 - ((product.price / product.originPrice) * 100)) > 0 ? (
                     `
                                                 <div class="product-origin-price caption1 text-secondary2">
-                                                    <del>$${product.originPrice}.00</del>
+                                                    <del>₹${product.originPrice}.00</del>
                                                 </div>
                                                 <div
                                                     class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">

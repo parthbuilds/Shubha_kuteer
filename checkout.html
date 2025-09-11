@@ -30,10 +30,10 @@
                     </div>
                     <div class="choose-type choose-currency flex items-center gap-1.5">
                         <div class="select relative">
-                            <p class="selected caption2 text-white">USD</p>
+                            <p class="selected caption2 text-white">INR</p>
                             <ul class="list-option bg-white">
-                                <li data-item="USD" class="caption2 active">USD</li>
-                                <li data-item="EUR" class="caption2">EUR</li>
+                                <li data-item="INR" class="caption2 active">INR</li>
+                                <li data-item="USD" class="caption2">USD</li>
                                 <li data-item="GBP" class="caption2">GBP</li>
                             </ul>
                         </div>
@@ -383,7 +383,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="product-name text-title duration-300">
-                                                                        Faux-leather trousers</div>
+                                                                        Kaftan 2</div>
                                                                     <div
                                                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                                                         <div
@@ -408,11 +408,11 @@
 
                                                                     <div
                                                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00
+                                                                        <div class="product-price text-title">₹40.00
                                                                         </div>
                                                                         <div
                                                                             class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
+                                                                            <del>₹50.00</del>
                                                                         </div>
                                                                         <div
                                                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -491,7 +491,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="product-name text-title duration-300">
-                                                                        Off-the-Shoulder Blouse</div>
+                                                                        Bedsheet 1</div>
                                                                     <div
                                                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                                                         <div
@@ -516,11 +516,11 @@
 
                                                                     <div
                                                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00
+                                                                        <div class="product-price text-title">₹40.00
                                                                         </div>
                                                                         <div
                                                                             class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
+                                                                            <del>₹50.00</del>
                                                                         </div>
                                                                         <div
                                                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -556,18 +556,26 @@
                         <div class="list-action flex items-center gap-4">
                             <div class="user-icon flex items-center justify-center cursor-pointer">
                                 <i class="ph-bold ph-user text-2xl"></i>
-                                <div
-                                class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm">
-                                <a href="login.html" id="loginBtn" class="button-main w-full text-center">Login</a>
-                                <div class="text-secondary text-center mt-3 pb-4">
-                                    Don’t have an account?
-                                    <a href="register.html" class="text-black pl-1 hover:underline">Register</a>
-                                </div>
-                                <a href="#!" id="logoutBtn" class="button-main w-full text-center hidden">Logout</a>
+                                <div class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm"
+                                    id="userPopup">
 
-                                <div class="bottom mt-4 pt-4 border-t border-line"></div>
-                                <a href="#!" class="body1 hover:underline">Support</a>
-                            </div>
+                                    <!-- Login button -->
+                                    <a href="login.html" id="loginBtn" class="button-main w-full text-center">Login</a>
+
+                                    <!-- Logout button (hidden by default) -->
+                                    <button id="logoutBtn"
+                                        class="button-main w-full text-center hidden bg-red-600 hover:bg-red-700">
+                                        Logout
+                                    </button>
+
+                                    <div class="text-secondary text-center mt-3 pb-4" id="registerBlock">
+                                        Don’t have an account?
+                                        <a href="register.html" class="text-black pl-1 hover:underline">Register</a>
+                                    </div>
+
+                                    <div class="bottom mt-4 pt-4 border-t border-line"></div>
+                                    <a href="#!" class="body1 hover:underline">Support</a>
+                                </div>
                             </div>
                             <div class="max-md:hidden wishlist-icon flex items-center relative cursor-pointer">
                                 <i class="ph-bold ph-heart text-2xl"></i>
@@ -959,56 +967,37 @@
                                 </div>
                             </form>
                         </div>
+                        <!-- ✅ Checkout Form -->
                         <div class="information mt-5">
                             <div class="heading5">Information</div>
                             <div class="form-checkout mt-5">
-                                <form>
+                                <form id="checkout-form">
                                     <div class="grid sm:grid-cols-2 gap-4 gap-y-5 flex-wrap">
-                                        <div class="">
+                                        <div>
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="firstName"
                                                 type="text" placeholder="First Name *" required />
                                         </div>
-                                        <div class="">
+                                        <div>
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="lastName"
                                                 type="text" placeholder="Last Name *" required />
                                         </div>
-                                        <div class="">
+                                        <div>
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="email"
                                                 type="email" placeholder="Email Address *" required />
                                         </div>
-                                        <div class="">
+                                        <div>
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="phoneNumber"
-                                                type="number" placeholder="Phone Numbers *" required />
+                                                type="number" placeholder="Phone Number *" required />
                                         </div>
-                                        <div class="col-span-full select-block">
-                                            <select class="border border-line px-4 py-3 w-full rounded-lg" id="region"
-                                                name="region">
-                                                <option value="default">Choose Country/Region</option>
-                                                <option value="India">India</option>
-                                                <option value="France">France</option>
-                                                <option value="Singapore">Singapore</option>
-                                            </select>
-                                            <i class="ph ph-caret-down arrow-down"></i>
-                                        </div>
-                                        <div class="">
+                                        <div class="col-span-full">
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="city" type="text"
-                                                placeholder="Town/City *" required />
+                                                placeholder="City *" required />
                                         </div>
-                                        <div class="">
+                                        <div class="col-span-full">
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="apartment"
-                                                type="text" placeholder="Street,..." required />
+                                                type="text" placeholder="Street Address *" required />
                                         </div>
-                                        <div class="select-block">
-                                            <select class="border border-line px-4 py-3 w-full rounded-lg" id="country"
-                                                name="country">
-                                                <option value="default">Choose State</option>
-                                                <option value="India">India</option>
-                                                <option value="France">France</option>
-                                                <option value="Singapore">Singapore</option>
-                                            </select>
-                                            <i class="ph ph-caret-down arrow-down"></i>
-                                        </div>
-                                        <div class="">
+                                        <div class="col-span-full">
                                             <input class="border-line px-4 py-3 w-full rounded-lg" id="postal"
                                                 type="text" placeholder="Postal Code *" required />
                                         </div>
@@ -1017,154 +1006,24 @@
                                                 name="note" placeholder="Write note..."></textarea>
                                         </div>
                                     </div>
+
+                                    <!-- Payment Block -->
                                     <div class="payment-block md:mt-10 mt-6">
-                                        <div class="heading5">Choose payment Option:</div>
+                                        <div class="heading5">Choose Payment Option:</div>
                                         <div class="list-payment mt-5">
                                             <div class="type bg-surface p-5 border border-line rounded-lg">
-                                                <input class="cursor-pointer" type="radio" id="credit" name="payment" />
-                                                <label class="text-button pl-2 cursor-pointer" for="credit">Credit
-                                                    Card</label>
-                                                <div class="infor">
-                                                    <div class="text-on-surface-variant1 pt-4">Make your payment
-                                                        directly into our bank account. Your order will not be shipped
-                                                        until the funds have cleared in our account.</div>
-                                                    <div class="row">
-                                                        <div class="col-12 mt-3">
-                                                            <label for="cardNumberCredit">Card Numbers</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="cardNumberCredit"
-                                                                placeholder="ex.1234567290" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="dateCredit">Date</label>
-                                                            <input class="border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="date" id="dateCredit" name="date" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="ccvCredit">CCV</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="ccvCredit" placeholder="****" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex items-center gap-2 mt-3">
-                                                        <input type="checkbox" id="saveCredit" name="save" />
-                                                        <label class="text-button" for="saveCredit">Save Card
-                                                            Details</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="type bg-surface p-5 border border-line rounded-lg mt-5">
-                                                <input class="cursor-pointer" type="radio" id="delivery"
-                                                    name="payment" />
-                                                <label class="text-button pl-2 cursor-pointer" for="delivery">Cash on
-                                                    delivery</label>
-                                                <div class="infor">
-                                                    <div class="text-on-surface-variant1 pt-4">Make your payment
-                                                        directly into our bank account. Your order will not be shipped
-                                                        until the funds have cleared in our account.</div>
-                                                    <div class="row">
-                                                        <div class="col-12 mt-3">
-                                                            <label for="cardNumberDelivery">Card Numbers</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="cardNumberDelivery"
-                                                                placeholder="ex.1234567290" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="dateDelivery">Date</label>
-                                                            <input class="border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="date" id="dateDelivery" name="date" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="ccvDelivery">CCV</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="ccvDelivery" placeholder="****" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex items-center gap-2 mt-3">
-                                                        <input type="checkbox" id="saveDelivery" name="save" />
-                                                        <label class="text-button" for="saveDelivery">Save Card
-                                                            Details</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="type bg-surface p-5 border border-line rounded-lg mt-5">
-                                                <input class="cursor-pointer" type="radio" id="apple" name="payment" />
-                                                <label class="text-button pl-2 cursor-pointer" for="apple">Apple
-                                                    Pay</label>
-                                                <div class="infor">
-                                                    <div class="text-on-surface-variant1 pt-4">Make your payment
-                                                        directly into our bank account. Your order will not be shipped
-                                                        until the funds have cleared in our account.</div>
-                                                    <div class="row">
-                                                        <div class="col-12 mt-3">
-                                                            <label for="cardNumberApple">Card Numbers</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="cardNumberApple"
-                                                                placeholder="ex.1234567290" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="dateApple">Date</label>
-                                                            <input class="border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="date" id="dateApple" name="date" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="ccvApple">CCV</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="ccvApple" placeholder="****" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex items-center gap-2 mt-3">
-                                                        <input type="checkbox" id="saveApple" name="save" />
-                                                        <label class="text-button" for="saveApple">Save Card
-                                                            Details</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="type bg-surface p-5 border border-line rounded-lg mt-5">
-                                                <input class="cursor-pointer" type="radio" id="paypal" name="payment" />
-                                                <label class="text-button pl-2 cursor-pointer"
-                                                    for="paypal">PayPal</label>
-                                                <div class="infor">
-                                                    <div class="text-on-surface-variant1 pt-4">Make your payment
-                                                        directly into our bank account. Your order will not be shipped
-                                                        until the funds have cleared in our account.</div>
-                                                    <div class="row">
-                                                        <div class="col-12 mt-3">
-                                                            <label for="cardNumberPaypal">Card Numbers</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="cardNumberPaypal"
-                                                                placeholder="ex.1234567290" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="datePaypal">Date</label>
-                                                            <input class="border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="date" id="datePaypal" name="date" />
-                                                        </div>
-                                                        <div class="mt-3">
-                                                            <label for="ccvPaypal">CCV</label>
-                                                            <input
-                                                                class="cursor-pointer border-line px-4 py-3 w-full rounded mt-2"
-                                                                type="text" id="ccvPaypal" placeholder="****" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex items-center gap-2 mt-3">
-                                                        <input type="checkbox" id="savePaypal" name="save" />
-                                                        <label class="text-button" for="savePaypal">Save Card
-                                                            Details</label>
-                                                    </div>
-                                                </div>
+                                                <label class="text-button cursor-pointer">Pay with Razorpay (Cards / UPI
+                                                    / Netbanking)</label>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Submit -->
                                     <div class="block-button md:mt-10 mt-6">
-                                        <button class="button-main w-full">Payment</button>
+                                        <button type="submit"
+                                            class="button-main px-16 py-40 bg-blue-600 text-secondary rounded-lg hover:bg-blue-700 bg-primary">
+                                            Make Payment
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -1213,7 +1072,8 @@
                                 <div class="flex flex-col">
                                     <span class="">shubhakuteer@gmail.com</span>
                                     <span class="mt-[14px]">+91 8764170000</span>
-                                    <span class="mt-3 pt-1">Shanti Residency, A9/10, Ayodhya Nagar, Gandhi Path West, Vaishali Nagar, Jaipur - 302021</span>
+                                    <span class="mt-3 pt-1">Shanti Residency, A9/10, Ayodhya Nagar, Gandhi Path West,
+                                        Vaishali Nagar, Jaipur - 302021</span>
                                 </div>
                             </div>
                         </div>
@@ -1236,14 +1096,13 @@
                                 </div>
                                 <div class="item flex flex-col basis-1/3">
                                     <div class="text-button-uppercase pb-3">Quick Shop</div>
-                                    <a class="caption1 has-line-before duration-300 w-fit"
-                                        href="shop.html">Women</a>
-                                    <a class="caption1 has-line-before duration-300 w-fit pt-2"
-                                        href="shop.html">Men </a>
-                                    <a class="caption1 has-line-before duration-300 w-fit pt-2"
-                                        href="shop.html">Clothes </a>
-                                    <a class="caption1 has-line-before duration-300 w-fit pt-2"
-                                        href="shop.html"> Accessories </a>
+                                    <a class="caption1 has-line-before duration-300 w-fit" href="shop.html">Women</a>
+                                    <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">Men
+                                    </a>
+                                    <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">Clothes
+                                    </a>
+                                    <a class="caption1 has-line-before duration-300 w-fit pt-2" href="shop.html">
+                                        Accessories </a>
                                     <a class="caption1 has-line-before duration-300 w-fit pt-2"
                                         href="blog-default.html">Blog </a>
                                 </div>
@@ -1294,8 +1153,8 @@
                                 </div>
                                 <div class="choose-currency flex items-center gap-1.5">
                                     <select name="currency" id="chooseCurrencyFooter" class="caption2 bg-transparent">
+                                        <option value="INR">INR</option>
                                         <option value="USD">USD</option>
-                                        <option value="EUR">EUR</option>
                                         <option value="GBP">GBP</option>
                                     </select>
                                     <i class="ph ph-caret-down text-xs text-[#1F1F1F]"></i>
@@ -1412,7 +1271,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                    <div class="product-name text-title duration-300">Kaftan 2</div>
                                     <div
                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                         <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1434,9 +1293,9 @@
 
                                     <div
                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                        <div class="product-price text-title">$40.00</div>
+                                        <div class="product-price text-title">₹40.00</div>
                                         <div class="product-origin-price caption1 text-secondary2">
-                                            <del>$50.00</del>
+                                            <del>₹50.00</del>
                                         </div>
                                         <div
                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1446,7 +1305,7 @@
                             </div>
                         </div>
 
-                        <div class="product-item grid-type" data-item="13">
+                        <div class="product-item grid-type" data-item="4">
                             <div class="product-main cursor-pointer block">
                                 <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                     <div
@@ -1502,7 +1361,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                    <div class="product-name text-title duration-300">Kaftan 2</div>
                                     <div
                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                         <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1524,9 +1383,9 @@
 
                                     <div
                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                        <div class="product-price text-title">$40.00</div>
+                                        <div class="product-price text-title">₹40.00</div>
                                         <div class="product-origin-price caption1 text-secondary2">
-                                            <del>$50.00</del>
+                                            <del>₹50.00</del>
                                         </div>
                                         <div
                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1536,7 +1395,7 @@
                             </div>
                         </div>
 
-                        <div class="product-item grid-type" data-item="12">
+                        <div class="product-item grid-type" data-item="7">
                             <div class="product-main cursor-pointer block">
                                 <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                     <div
@@ -1592,7 +1451,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                    <div class="product-name text-title duration-300">Bedsheet 1</div>
                                     <div
                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                         <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -1614,9 +1473,9 @@
 
                                     <div
                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                        <div class="product-price text-title">$40.00</div>
+                                        <div class="product-price text-title">₹40.00</div>
                                         <div class="product-origin-price caption1 text-secondary2">
-                                            <del>$50.00</del>
+                                            <del>₹50.00</del>
                                         </div>
                                         <div
                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1682,7 +1541,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                    <div class="product-name text-title duration-300">Bedsheet 1</div>
                                     <div
                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                         <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -1704,9 +1563,9 @@
 
                                     <div
                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                        <div class="product-price text-title">$40.00</div>
+                                        <div class="product-price text-title">₹40.00</div>
                                         <div class="product-origin-price caption1 text-secondary2">
-                                            <del>$50.00</del>
+                                            <del>₹50.00</del>
                                         </div>
                                         <div
                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1752,11 +1611,11 @@
                                         class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                 </div>
                                 <div class="">
-                                    <div class="name text-button">Faux-leather trousers</div>
+                                    <div class="name text-button">Table runner 3</div>
                                     <div class="flex items-center gap-2 mt-2">
-                                        <div class="product-price text-title">$15.00</div>
+                                        <div class="product-price text-title">₹15.00</div>
                                         <div class="product-origin-price text-title text-secondary2">
-                                            <del>$25.00</del>
+                                            <del>₹25.00</del>
                                         </div>
                                     </div>
                                 </div>
@@ -1773,11 +1632,11 @@
                                         class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                 </div>
                                 <div class="">
-                                    <div class="name text-button">Faux-leather trousers</div>
+                                    <div class="name text-button">Kaftan 1</div>
                                     <div class="flex items-center gap-2 mt-2">
-                                        <div class="product-price text-title">$15.00</div>
+                                        <div class="product-price text-title">₹15.00</div>
                                         <div class="product-origin-price text-title text-secondary2">
-                                            <del>$25.00</del>
+                                            <del>₹25.00</del>
                                         </div>
                                     </div>
                                 </div>
@@ -1794,11 +1653,11 @@
                                         class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                 </div>
                                 <div class="">
-                                    <div class="name text-button">Faux-leather trousers</div>
+                                    <div class="name text-button">Pillow 1</div>
                                     <div class="flex items-center gap-2 mt-2">
-                                        <div class="product-price text-title">$15.00</div>
+                                        <div class="product-price text-title">₹15.00</div>
                                         <div class="product-origin-price text-title text-secondary2">
-                                            <del>$25.00</del>
+                                            <del>₹25.00</del>
                                         </div>
                                     </div>
                                 </div>
@@ -1814,11 +1673,11 @@
                                         class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                                 </div>
                                 <div class="">
-                                    <div class="name text-button">Faux-leather trousers</div>
+                                    <div class="name text-button">Kaftan 2</div>
                                     <div class="flex items-center gap-2 mt-2">
-                                        <div class="product-price text-title">$15.00</div>
+                                        <div class="product-price text-title">₹15.00</div>
                                         <div class="product-origin-price text-title text-secondary2">
-                                            <del>$25.00</del>
+                                            <del>₹25.00</del>
                                         </div>
                                     </div>
                                 </div>
@@ -2349,7 +2208,94 @@
                 </div>
             </div>
         </div>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+            document.getElementById("checkout-form").addEventListener("submit", async function (e) {
+                e.preventDefault();
 
+                // Check if the user is logged in
+                const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+                if (!isLoggedIn) {
+                    alert("Please log in to your account before making a payment.");
+                    // You can also redirect to the login page
+                    // window.location.href = 'login.html';
+                    return; // Stop the function from proceeding
+                }
+
+                const formData = {
+                    first_name: document.getElementById("firstName").value,
+                    last_name: document.getElementById("lastName").value,
+                    email: document.getElementById("email").value,
+                    phone_number: document.getElementById("phoneNumber").value,
+                    city: document.getElementById("city").value,
+                    apartment: document.getElementById("apartment").value,
+                    postal_code: document.getElementById("postal").value,
+                    note: document.getElementById("note").value,
+                    amount: 100 // 👈 Rs.100 test payment instead of 50,000
+                };
+
+                try {
+                    // Call backend to create Razorpay order
+                    const res = await fetch("http://localhost:3000/api/orders/create-order", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData)
+                    });
+                    const orderData = await res.json();
+
+                    if (!orderData.success) {
+                        alert("❌ Failed to create order: " + orderData.error);
+                        return;
+                    }
+
+                    // Razorpay Checkout options
+                    const options = {
+                        key: orderData.key,
+                        amount: orderData.razorpay_order.amount,
+                        currency: "INR",
+                        name: "Shubha Kuteer",
+                        description: "Test Transaction",
+                        order_id: orderData.razorpay_order.id,
+                        handler: async function (response) {
+                            // Send payment capture to backend
+                            await fetch("http://localhost:3000/api/orders/capture-order", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    razorpay_order_id: response.razorpay_order_id,
+                                    razorpay_payment_id: response.razorpay_payment_id,
+                                    payment_status: "completed"
+                                })
+                            });
+                            alert("✅ Payment Successful!");
+                        },
+                        prefill: {
+                            name: formData.first_name + " " + formData.last_name,
+                            email: formData.email,
+                            contact: formData.phone_number
+                        },
+                        theme: { color: "#3399cc" },
+                        method: {
+                            upi: true,
+                            card: true,
+                            netbanking: true,
+                            wallet: true,
+                            emi: true
+                        }
+                    };
+
+                    const rzp = new Razorpay(options);
+                    rzp.open();
+                } catch (err) {
+                    console.error("Payment error:", err);
+                    alert("❌ Payment initiation failed");
+                }
+            });
+        </script>
+
+
+        <script src="./assets/js/login.js"></script>
         <script src="./assets/js/phosphor-icons.js"></script>
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="./assets/js/main.js"></script>

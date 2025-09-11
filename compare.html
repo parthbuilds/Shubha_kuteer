@@ -30,10 +30,10 @@
                     </div>
                     <div class="choose-type choose-currency flex items-center gap-1.5">
                         <div class="select relative">
-                            <p class="selected caption2 text-white">USD</p>
+                            <p class="selected caption2 text-white">INR</p>
                             <ul class="list-option bg-white">
-                                <li data-item="USD" class="caption2 active">USD</li>
-                                <li data-item="EUR" class="caption2">EUR</li>
+                                <li data-item="INR" class="caption2 active">INR</li>
+                                <li data-item="USD" class="caption2">USD</li>
                                 <li data-item="GBP" class="caption2">GBP</li>
                             </ul>
                         </div>
@@ -639,8 +639,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="product-name text-title duration-300">
-                                                                        Faux-leather trousers</div>
+                                                                    <div class="product-name text-title duration-300">Kaftan 2</div>
                                                                     <div
                                                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                                                         <div
@@ -665,11 +664,11 @@
 
                                                                     <div
                                                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00
+                                                                        <div class="product-price text-title">₹40.00
                                                                         </div>
                                                                         <div
                                                                             class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
+                                                                            <del>₹50.00</del>
                                                                         </div>
                                                                         <div
                                                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -747,8 +746,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="product-name text-title duration-300">
-                                                                        Off-the-Shoulder Blouse</div>
+                                                                    <div class="product-name text-title duration-300">Bedsheet 1</div>
                                                                     <div
                                                                         class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                                                         <div
@@ -773,11 +771,11 @@
 
                                                                     <div
                                                                         class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                                                        <div class="product-price text-title">$40.00
+                                                                        <div class="product-price text-title">₹40.00
                                                                         </div>
                                                                         <div
                                                                             class="product-origin-price caption1 text-secondary2">
-                                                                            <del>$50.00</del>
+                                                                            <del>₹50.00</del>
                                                                         </div>
                                                                         <div
                                                                             class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1013,19 +1011,28 @@
                         </div>
                         <div class="list-action flex items-center gap-4">
                             <div class="user-icon flex items-center justify-center cursor-pointer">
-                                <i class="ph-bold ph-user text-2xl"></i>
-                                <div
-                                class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm">
+                            <i class="ph-bold ph-user text-2xl"></i>
+                            <div class="login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm"
+                                id="userPopup">
+
+                                <!-- Login button -->
                                 <a href="login.html" id="loginBtn" class="button-main w-full text-center">Login</a>
-                                <div class="text-secondary text-center mt-3 pb-4">
+
+                                <!-- Logout button (hidden by default) -->
+                                <button id="logoutBtn"
+                                    class="button-main w-full text-center hidden bg-red-600 hover:bg-red-700">
+                                    Logout
+                                </button>
+
+                                <div class="text-secondary text-center mt-3 pb-4" id="registerBlock">
                                     Don’t have an account?
                                     <a href="register.html" class="text-black pl-1 hover:underline">Register</a>
                                 </div>
-                                <a href="#!" id="logoutBtn" class="button-main w-full text-center hidden">Logout</a>
 
                                 <div class="bottom mt-4 pt-4 border-t border-line"></div>
                                 <a href="#!" class="body1 hover:underline">Support</a>
                             </div>
+                        </div>
                             </div>
                             <div class="max-md:hidden wishlist-icon flex items-center relative cursor-pointer">
                                 <i class="ph-bold ph-heart text-2xl"></i>
@@ -1410,8 +1417,8 @@
                             </div>
                             <div class="choose-currency flex items-center gap-1.5">
                                 <select name="currency" id="chooseCurrencyFooter" class="caption2 bg-transparent">
+                                    <option value="INR">INR</option>
                                     <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
                                     <option value="GBP">GBP</option>
                                 </select>
                                 <i class="ph ph-caret-down text-xs text-[#1F1F1F]"></i>
@@ -1524,7 +1531,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                <div class="product-name text-title duration-300">Kaftan 2</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1546,9 +1553,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1558,7 +1565,7 @@
                         </div>
                     </div>
 
-                    <div class="product-item grid-type" data-item="13">
+                    <div class="product-item grid-type" data-item="4">
                         <div class="product-main cursor-pointer block">
                             <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                 <div
@@ -1611,7 +1618,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Faux-leather trousers</div>
+                                <div class="product-name text-title duration-300">Kaftan 2</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-black w-8 h-8 rounded-full duration-300 relative">
@@ -1633,9 +1640,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1645,7 +1652,7 @@
                         </div>
                     </div>
 
-                    <div class="product-item grid-type" data-item="12">
+                    <div class="product-item grid-type" data-item="7">
                         <div class="product-main cursor-pointer block">
                             <div class="product-thumb bg-white relative overflow-hidden rounded-2xl">
                                 <div
@@ -1698,7 +1705,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                <div class="product-name text-title duration-300">Bedsheet 1</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -1720,9 +1727,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1785,7 +1792,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-name text-title duration-300">Off-the-Shoulder Blouse</div>
+                                <div class="product-name text-title duration-300">Bedsheet 1</div>
                                 <div
                                     class="list-color py-2 max-md:hidden flex items-center gap-3 flex-wrap duration-500">
                                     <div class="color-item bg-red w-8 h-8 rounded-full duration-300 relative">
@@ -1807,9 +1814,9 @@
 
                                 <div
                                     class="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                                    <div class="product-price text-title">$40.00</div>
+                                    <div class="product-price text-title">₹40.00</div>
                                     <div class="product-origin-price caption1 text-secondary2">
-                                        <del>$50.00</del>
+                                        <del>₹50.00</del>
                                     </div>
                                     <div
                                         class="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
@@ -1855,11 +1862,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Table runner 3</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -1876,11 +1883,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Kaftan 1</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -1897,11 +1904,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Pillow 1</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -1917,11 +1924,11 @@
                                     class="w-[100px] aspect-square flex-shrink-0 rounded-lg" />
                             </div>
                             <div class="">
-                                <div class="name text-button">Faux-leather trousers</div>
+                                <div class="name text-button">Kaftan 2</div>
                                 <div class="flex items-center gap-2 mt-2">
-                                    <div class="product-price text-title">$15.00</div>
+                                    <div class="product-price text-title">₹15.00</div>
                                     <div class="product-origin-price text-title text-secondary2">
-                                        <del>$25.00</del>
+                                        <del>₹25.00</del>
                                     </div>
                                 </div>
                             </div>
@@ -2445,6 +2452,7 @@
         </div>
     </div>
 
+    <script src="./assets/js/login.js"></script>
     <script src="./assets/js/phosphor-icons.js"></script>
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
