@@ -7,78 +7,55 @@ const path = require("path");
 
 const app = express();
 
-// =========================
-// 🔹 Middlewares
-// =========================
+// --- Middleware ---
 app.use(cors({
-    origin: "http://localhost:3000", // adjust if frontend runs elsewhere
+    origin: "http://localhost:3000",
     credentials: true
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// =========================
-// 🔹 Static Files
-// =========================
-app.use("/", express.static(path.join(__dirname, ".."))); 
-app.use("/uploads", express.static(path.join(__dirname, "..", "public", "uploads"))); 
-app.use("/admin", express.static(path.join(__dirname, "..", "admin"))); 
+// --- Static File Serving ---
+app.use("/", express.static(path.join(__dirname, "..")));
+app.use("/uploads", express.static(path.join(__dirname, "..", "public", "uploads")));
+app.use("/admin", express.static(path.join(__dirname, "..", "admin")));
 
-// =========================
-// 🔹 Routes
-// =========================
+// --- Route Imports ---
 const authRoutes = require("./routes/authRoutes");
 const adminAuthRoutes = require("./routes/adminAuthRoutes");
-const adminAuth = require("./middlewares/adminAuth");
 const adminUserRoutes = require("./routes/adminUserRoutes");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const attributeRoutes = require("./routes/attributeRoutes");
-const ordersRoutes = require("./routes/orders"); 
-const memberRoutes = require("./routes/routes"); 
+const ordersRoutes = require("./routes/orders");
+const memberRoutes = require("./routes/routes");
+const adminAuth = require("./middlewares/adminAuth");
 
-// Public APIs
+// --- API Routes (Public & Protected) ---
 app.use("/api/auth", authRoutes);
 app.use("/api/members", memberRoutes);
+app.use("/api/orders", ordersRoutes);
 
-// Admin APIs (protected by adminAuth)
+// Admin APIs (protected by the adminAuth middleware)
 app.use("/api/admin/auth", adminAuthRoutes);
 app.use("/api/admin/users", adminAuth, adminUserRoutes);
 app.use("/api/admin/products", adminAuth, productRoutes);
 app.use("/api/admin/categories", adminAuth, categoryRoutes);
 app.use("/api/admin/attributes", adminAuth, attributeRoutes);
 
-// =========================
-// 🔹 Orders API
-// =========================
-app.use("/api/orders", ordersRoutes);
-
-// =========================
-// 🔹 Admin protected pages
-// =========================
+// --- Admin Protected Page ---
 app.get("/admin/index.html", adminAuth, (req, res) => {
     res.sendFile(path.join(__dirname, "..", "admin", "index.html"));
 });
 
-// =========================
-// 🔹 404 Handler
-// =========================
+// --- 404 Not Found Handler ---
 app.use((req, res) => {
-    console.log("404 →", req.originalUrl);
+    console.log(`404 → ${req.originalUrl}`);
     res.status(404).json({
         message: "❌ API route not found",
         path: req.originalUrl
     });
 });
-
-// // =========================
-// // 🔹 Start Server
-// // =========================
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`🚀 User site running at: http://localhost:${PORT}`);
-//     console.log(`🛠️ Admin site running at: http://localhost:${PORT}/admin`);
-// });
 
 module.exports = app;
