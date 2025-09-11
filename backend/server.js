@@ -80,3 +80,5 @@ app.use((req, res) => {
 //     console.log(`🚀 User site running at: http://localhost:${PORT}`);
 //     console.log(`🛠️ Admin site running at: http://localhost:${PORT}/admin`);
 // });
+
+module.exports = app;
